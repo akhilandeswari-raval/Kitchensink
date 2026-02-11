@@ -75,6 +75,7 @@ describe('Drag and Drop with Native Events', () => {
   })
 
   it('should drag item to target', () => {
+    cy.visit('https://testkru.com/Interactions/DragAndDrop')
     triggerDragAndDrop('#box2', '#dropZone1')
   })
 
