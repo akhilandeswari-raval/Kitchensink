@@ -26,5 +26,4 @@
 
 require('cypress-downloadfile/lib/downloadFileCommand')
 import 'cypress-drag-drop'
-require('cypress-drag-drop')
 require('@4tw/cypress-drag-drop')
