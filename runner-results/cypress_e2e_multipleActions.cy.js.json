@@ -1,0 +1,10 @@
+{
+  "suites": 2,
+  "tests": 8,
+  "passes": 7,
+  "pending": 0,
+  "failures": 1,
+  "start": "2026-02-15T09:38:05.978Z",
+  "duration": 20826,
+  "file": "cypress\\e2e\\multipleActions.cy.js"
+}

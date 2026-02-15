@@ -1,0 +1,268 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2026-02-15T07:20:52.251Z",
+    "end": "2026-02-15T07:21:18.748Z",
+    "duration": 26497
+  },
+  "results": [
+    {
+      "uuid": "b84216cf-284f-4b20-b829-1e0367613ac5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\multipleActions.cy.js",
+      "file": "cypress\\e2e\\multipleActions.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Reading Files using Fixtures",
+          "fullTitle": "Reading Files using Fixtures",
+          "timedOut": null,
+          "duration": 44,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.fixture('example.json').then(data => {\n  cy.log(data.name);\n});",
+          "err": {},
+          "uuid": "dd46c672-8523-4242-baa7-816b88f1f4dd",
+          "parentUUID": "b84216cf-284f-4b20-b829-1e0367613ac5",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Reading File using read File method",
+          "fullTitle": "Reading File using read File method",
+          "timedOut": null,
+          "duration": 50,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.readFile('./cypress/fixtures/example.json').then(data_read => {\n  cy.log(data_read.email);\n});",
+          "err": {},
+          "uuid": "c3f26184-9632-40b6-b29e-49f8ddc9dca7",
+          "parentUUID": "b84216cf-284f-4b20-b829-1e0367613ac5",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Writing some text in a File",
+          "fullTitle": "Writing some text in a File",
+          "timedOut": null,
+          "duration": 25,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.writeFile('./cypress/fixtures/written.txt', 'This is Akhila learning basic Cypress\\n Life is good and all is well. \\n I am joining a new company as a Lead QA Engineer on March 3rd 2026 with a pay of 170,000 CAD. \\r The position is fully remote and is very safe with all the benefits.');",
+          "err": {},
+          "uuid": "987d809b-c7d8-47c9-9c71-6a71700d6c85",
+          "parentUUID": "b84216cf-284f-4b20-b829-1e0367613ac5",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Downloading files",
+          "fullTitle": "Downloading files",
+          "timedOut": null,
+          "duration": 11491,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('https://testkru.com/Elements/Files');\nconst downloadsFolder = Cypress.config('downloadsFolder');\n// const fileName = 'plant_image.jpg';\n// const filePath = `${downloadsFolder}/${fileName}`;\n// 3. Click the button\ncy.contains('Download Now').click();\n// 4. Verify file exists in the folder\n// Note: It's best to allow a few seconds for the download to complete\ncy.readFile(`${downloadsFolder}/plant_image.jpg`, {\n  timeout: 10000\n}).should('exist');\ncy.wait(5000);\ncy.contains('File 1').click();\ncy.readFile(`${downloadsFolder}/codekru.png`, {\n  timeout: 10000\n}).should('exist');",
+          "err": {},
+          "uuid": "337434c6-2c1b-46a6-a571-3799fb449c3b",
+          "parentUUID": "b84216cf-284f-4b20-b829-1e0367613ac5",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [
+        {
+          "uuid": "44019fe8-66d6-40ee-b3fc-1e847cc27e31",
+          "title": "File Upload",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "uploads multiple files",
+              "fullTitle": "File Upload uploads multiple files",
+              "timedOut": null,
+              "duration": 751,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the page with the file input\ncy.visit('https://testkru.com/Elements/Files');\n// Select the file input element and upload multiple files\ncy.get('input[id=\"multiFileUpload\"]').selectFile(['C:/Users/akhil/OneDrive/Pictures/Screenshots/Screenshot 2025-10-25 235119.png',\n// First file\n'C:/Users/akhil/OneDrive/Pictures/Screenshots/Screenshot 2025-10-25 234126.png' // Second file\n], {\n  action: 'select'\n} // or 'drag-drop'\n);\n// Optional: Assert that files are attached\n// cy.get('input[type=\"file\"]')[0].files.length.should('eq', 2);",
+              "err": {},
+              "uuid": "714dfd1e-bf10-4c7e-b2a2-4b1158b985ec",
+              "parentUUID": "44019fe8-66d6-40ee-b3fc-1e847cc27e31",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "uploads single file",
+              "fullTitle": "File Upload uploads single file",
+              "timedOut": null,
+              "duration": 608,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://testkru.com/Elements/Files');\ncy.get('input[id=\"singleFileUpload\"]').selectFile('C:/Users/akhil/OneDrive/Pictures/Happy Diwali.jpeg', {\n  action: 'select'\n});\n// cy.get('input[id=\"singleFileUpload\"]').files.length.should('eq',1)",
+              "err": {},
+              "uuid": "3bd80a5f-50f3-495f-9f71-2995596bbd7b",
+              "parentUUID": "44019fe8-66d6-40ee-b3fc-1e847cc27e31",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "714dfd1e-bf10-4c7e-b2a2-4b1158b985ec",
+            "3bd80a5f-50f3-495f-9f71-2995596bbd7b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1359,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "83c68d1a-92ba-4437-bd4f-49b11cc8d80c",
+          "title": "Drag and Drop with Native Events",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Mouse Events",
+              "fullTitle": "Drag and Drop with Native Events Mouse Events",
+              "timedOut": null,
+              "duration": 5836,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(5000);\ncy.get('#box1').drag('#dropZone1');",
+              "err": {},
+              "uuid": "f298fee0-a5bd-467e-8834-c2be6e037b4d",
+              "parentUUID": "83c68d1a-92ba-4437-bd4f-49b11cc8d80c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should drag item to target",
+              "fullTitle": "Drag and Drop with Native Events should drag item to target",
+              "timedOut": null,
+              "duration": 2550,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://testkru.com/Interactions/DragAndDrop');\ntriggerDragAndDrop('#box2', '#dropZone1');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading 'getData')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading 'getData')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at dragEnd (https://testkru.com/Interactions/DragAndDrop:245:50)\n    at HTMLDivElement.ondragend (https://testkru.com/Interactions/DragAndDrop:194:106)\n    at dispatch (https://testkru.com/__cypress/runner/cypress_runner.js:117142:17)\n    at onReady (https://testkru.com/__cypress/runner/cypress_runner.js:117248:20)\n    at runAllChecks (https://testkru.com/__cypress/runner/cypress_runner.js:115564:14)\n    at retryActionability (https://testkru.com/__cypress/runner/cypress_runner.js:115586:16)\n    at tryCatcher (https://testkru.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://testkru.com/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://testkru.com/__cypress/runner/cypress_runner.js:152023:68)\n    at <unknown> (https://testkru.com/__cypress/runner/cypress_runner.js:151964:14)",
+                "diff": null
+              },
+              "uuid": "70553066-e9ac-40d4-af64-338422d7b288",
+              "parentUUID": "83c68d1a-92ba-4437-bd4f-49b11cc8d80c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f298fee0-a5bd-467e-8834-c2be6e037b4d"
+          ],
+          "failures": [
+            "70553066-e9ac-40d4-af64-338422d7b288"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8386,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [
+        "dd46c672-8523-4242-baa7-816b88f1f4dd",
+        "c3f26184-9632-40b6-b29e-49f8ddc9dca7",
+        "987d809b-c7d8-47c9-9c71-6a71700d6c85",
+        "337434c6-2c1b-46a6-a571-3799fb449c3b"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 11610,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/2026-02-15_01-20-38",
+        "reportFilename": "mochawesome",
+        "testIsolation": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

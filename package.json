@@ -48,7 +48,10 @@
     "semantic-release": "semantic-release",
     "prepare": "node .husky/install.mjs",
     "cy:one": "cypress run --reporter mochawesome",
-    "reports": "node scripts/report-run.js"
+    "reports": "node scripts/report-runs.js",
+    "cy:parallel": "npx cypress-parallel -s cy:one -t 3 -d 'cypress/e2e/*.js'",
+    "cy:runwithhtmlreport": "node scripts/report-runs.js",
+    "cy:parallelwithhtmlreport": "node scripts/parallel-report-run.js"
   },
   "repository": {
     "type": "git",
@@ -61,6 +64,7 @@
   },
   "homepage": "https://github.com/cypress-io/cypress-example-kitchensink#readme",
   "dependencies": {
+    "cypress-parallel": "^0.15.0",
     "mochawesome": "7.1.4",
     "mochawesome-merge": "5.1.0",
     "mochawesome-report-generator": "6.3.2",
