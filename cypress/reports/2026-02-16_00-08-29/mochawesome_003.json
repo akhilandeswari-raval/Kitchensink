@@ -1,0 +1,127 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-16T06:09:06.014Z",
+    "end": "2026-02-16T06:09:10.319Z",
+    "duration": 4305,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2436a03e-b8a9-481d-9338-7d27f673dfa7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\fileUpload.cy.js",
+      "file": "cypress\\e2e\\fileUpload.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7fc4424b-b830-4202-ba13-682d2389a6cf",
+          "title": "File Upload",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "uploads multiple files",
+              "fullTitle": "File Upload uploads multiple files",
+              "timedOut": null,
+              "duration": 1792,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the page with the file input\ncy.visit('https://testkru.com/Elements/Files');\n// Select the file input element and upload multiple files\ncy.get('input[id=\"multiFileUpload\"]').selectFile(['C:/Users/akhil/OneDrive/Pictures/Screenshots/Screenshot 2025-10-25 235119.png',\n// First file\n'C:/Users/akhil/OneDrive/Pictures/Screenshots/Screenshot 2025-10-25 234126.png' // Second file\n], {\n  action: 'select'\n}); // or 'drag-drop'",
+              "err": {},
+              "uuid": "9115f722-4ab4-4126-9444-873d0f1af860",
+              "parentUUID": "7fc4424b-b830-4202-ba13-682d2389a6cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "uploads single file",
+              "fullTitle": "File Upload uploads single file",
+              "timedOut": null,
+              "duration": 479,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://testkru.com/Elements/Files');\ncy.get('input[id=\"singleFileUpload\"]').selectFile('C:/Users/akhil/OneDrive/Pictures/Happy Diwali.jpeg', {\n  action: 'select'\n});\n// cy.get('input[id=\"singleFileUpload\"]').files.length.should('eq',1)",
+              "err": {},
+              "uuid": "f73b1a9c-622f-4930-97ab-1dc6c33d12f6",
+              "parentUUID": "7fc4424b-b830-4202-ba13-682d2389a6cf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9115f722-4ab4-4126-9444-873d0f1af860",
+            "f73b1a9c-622f-4930-97ab-1dc6c33d12f6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2271,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/2026-02-16_00-08-29",
+        "reportFilename": "mochawesome",
+        "testIsolation": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

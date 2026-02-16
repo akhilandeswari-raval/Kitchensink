@@ -40,14 +40,12 @@ console.log('mergedJsonPath =', mergedJsonPath);
 fs.mkdirSync(jsonDir, { recursive: true });
 
 // Merge JSON files like the manual command you ran:
-execSync(`npx mochawesome-merge "${runDir}/*.json" -o ${mergedJsonPath}`, {stdio: 'inherit',
-});
+execSync(`npx mochawesome-merge "${runDir}/*.json" -o ${mergedJsonPath}`, {stdio: 'inherit',});
 
 // 5) Generate HTML in its own timestamped folder
 const htmlOutDir = `${runDir}_HTML`;
 console.log('htmlOutDir =', htmlOutDir);
 
-execSync(`npx mochawesome-report-generator ${mergedJsonPath} -f index -o ${htmlOutDir}`, {stdio: 'inherit', 
-});
+execSync(`npx mochawesome-report-generator ${mergedJsonPath} -f index -o ${htmlOutDir}`, {stdio: 'inherit', });
 
 console.log(`HTML report created at: ${htmlOutDir}/index.html`);

@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-16T08:49:48.573Z",
+    "end": "2026-02-16T08:49:48.869Z",
+    "duration": 296,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8e9c296a-bae8-48b6-ad73-5d74680fd889",
+      "title": "",
+      "fullFile": "cypress\\e2e\\fileHandling.cy.js",
+      "file": "cypress\\e2e\\fileHandling.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "445287d8-e602-48df-ba2c-111ba8fc7115",
+          "title": "File Handling in Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Reading Files using Fixtures",
+              "fullTitle": "File Handling in Cypress Reading Files using Fixtures",
+              "timedOut": null,
+              "duration": 127,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(data => {\n  cy.log(data.name);\n});",
+              "err": {},
+              "uuid": "6ae10a70-9111-4533-b59d-bca0368f7c0c",
+              "parentUUID": "445287d8-e602-48df-ba2c-111ba8fc7115",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Reading File using read File method",
+              "fullTitle": "File Handling in Cypress Reading File using read File method",
+              "timedOut": null,
+              "duration": 58,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile('./cypress/fixtures/example.json').then(data_read => {\n  cy.log(data_read.email);\n});",
+              "err": {},
+              "uuid": "27cae6ff-1c81-4000-85cc-cac80ac221cf",
+              "parentUUID": "445287d8-e602-48df-ba2c-111ba8fc7115",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Writing some text in a File",
+              "fullTitle": "File Handling in Cypress Writing some text in a File",
+              "timedOut": null,
+              "duration": 25,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.writeFile('./cypress/fixtures/written.txt', 'This is Akhila learning basic Cypress\\n Life is good and all is well. \\n I am joining a new company as a Lead QA Engineer on March 3rd 2026 with a pay of 170,000 CAD. \\r The position is fully remote and is very safe with all the benefits.');",
+              "err": {},
+              "uuid": "23558cb9-b652-492f-bbe3-8ceb6687268b",
+              "parentUUID": "445287d8-e602-48df-ba2c-111ba8fc7115",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6ae10a70-9111-4533-b59d-bca0368f7c0c",
+            "27cae6ff-1c81-4000-85cc-cac80ac221cf",
+            "23558cb9-b652-492f-bbe3-8ceb6687268b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 210,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/2026-02-16_02-49-07",
+        "reportFilename": "mochawesome",
+        "testIsolation": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

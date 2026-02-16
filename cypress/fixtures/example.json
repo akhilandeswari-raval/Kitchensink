@@ -1,5 +1,12 @@
 {
   "name": "Using fixtures to represent data",
   "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
+  "body": "Fixtures are a great way to mock data for responses to routes",
+  "cy:chrome": "cypress run --browser chrome",
+  "cy:edge": "cypress run --browser edge",
+  "cy:firefox": "cypress run --browser firefox",
+  "cy:all:browsers:parallel": "run-p cy:chrome cy:edge cy:firefox",
+  "reports:merge-all": "npx mochawesome-merge \"cypress/reports/**/*.json\" -o cypress/reports/merged-all-browsers.json",
+  "reports:html-all": "npx mochawesome-report-generator cypress/reports/merged-all-browsers.json -f index -o cypress/reports/all-browsers_HTML",
+  "cy:all:browsers:withhtml": "npm run cy:all:browsers:parallel && npm run reports:merge-all && npm run reports:html-all"
 }

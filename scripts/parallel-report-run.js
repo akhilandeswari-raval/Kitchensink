@@ -8,8 +8,8 @@ const path = require('path');
 const ts = dayjs().format('YYYY-MM-DD_HH-mm-ss');
 console.log('Parallel RUN_TS =', ts);
 
-// 2) Run cypress-parallel, which uses "cy:one" (mochawesome reporter)
-const cmd = 'npx cypress-parallel -s cy:one -t 3 -d "cypress/e2e/*.js"';
+// 2) Run cypress-parallel, which uses "cy:runwithmochawesome" to generate mochawesome reports (mochawesome reporter)
+const cmd = 'npx cypress-parallel -s cy:runwithmocahwesome -t 4 -d "cypress/e2e/*.js"';
 console.log('Running command:', cmd);
 
 let cypressStatus = 0;
@@ -30,14 +30,12 @@ console.log('mergedJsonPath =', mergedJsonPath);
 
 fs.mkdirSync(jsonDir, { recursive: true });
 
-execSync(`npx mochawesome-merge "${mergeDir}/**/*.json" -o ${mergedJsonPath}`, {stdio: 'inherit',
-});
+execSync(`npx mochawesome-merge "${mergeDir}/**/*.json" -o ${mergedJsonPath}`, {stdio: 'inherit',});
 
 // 4) Generate HTML report for the parallel run
 const htmlOutDir = `cypress/reports/${ts}_HTML`;
 console.log('htmlOutDir =', htmlOutDir);
 
-execSync(`npx mochawesome-report-generator ${mergedJsonPath} -f index -o ${htmlOutDir}`, {stdio: 'inherit',
-});
+execSync(`npx mochawesome-report-generator ${mergedJsonPath} -f index -o ${htmlOutDir}`, {stdio: 'inherit',});
 
 console.log(`Parallel HTML report created at: ${htmlOutDir}/index.html`);
